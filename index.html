@@ -1,0 +1,510 @@
+<!doctype html>
+<html lang="en" data-theme="day">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Udith Dushantha · Physicist at the Dig Site</title>
+  <meta name="description" content="Udith Dushantha: physics graduate and graduate researcher at the University of Peradeniya working on medical imaging phantoms, radiological physics and membrane biophysics. Also into frogs, fossils and paleontology.">
+  <meta name="theme-color" content="#8fd3f4">
+  <link rel="preload" href="assets/fonts/press-start-2p-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/vt323-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <!-- HUD -->
+  <header class="hud" role="banner">
+    <a class="hud-logo" href="#top" aria-label="Back to top">
+      <canvas data-sprite="frog" data-pal="green" data-scale="2" aria-hidden="true"></canvas>
+      <span>UDITH</span>
+    </a>
+    <nav class="hud-nav" aria-label="Sections">
+      <a href="#education">Dig</a>
+      <a href="#research">Research</a>
+      <a href="#interests">Interests</a>
+      <a href="#awards">Awards</a>
+      <a href="#teaching">Teaching</a>
+      <a href="#skills">Skills</a>
+      <a href="#service">Service</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="hud-stats">
+      <span class="hud-chip" id="depth" aria-hidden="true">DEPTH 0m</span>
+      <span class="hud-chip hud-frogs" id="frogCount" role="status" aria-live="polite">FROGS 0/5</span>
+      <button class="px-btn px-btn--small" id="themeToggle" type="button" aria-pressed="false">
+        <span class="sr-only">Toggle day and night mode</span>
+        <canvas data-sprite="sun" data-scale="2" aria-hidden="true"></canvas>
+        <span class="toggle-label" aria-hidden="true">DAY</span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="sky" aria-hidden="true">
+        <div class="stars"></div>
+        <canvas class="sky-body" data-sprite="sun" data-scale="6"></canvas>
+        <canvas class="cloud c1" data-sprite="cloud" data-scale="6"></canvas>
+        <canvas class="cloud c2" data-sprite="cloud" data-scale="4"></canvas>
+        <canvas class="cloud c3" data-sprite="cloud" data-scale="5"></canvas>
+        <canvas class="dragonfly" data-sprite="dragonfly" data-scale="4"></canvas>
+      </div>
+
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Physicist · Medical Physics · Field Notes</p>
+          <h1 id="hero-title">Udith<br>Dushantha</h1>
+          <p class="lede">
+            I'm a physics graduate and graduate researcher at the University of Peradeniya.
+            I work on medical imaging phantoms, radiological physics and nanoparticle&ndash;membrane biophysics.
+            On the side I'm into <strong>frogs</strong>, <strong>fossils</strong> and anything <strong>paleontology</strong>.
+          </p>
+          <div class="hero-actions">
+            <a class="px-btn px-btn--primary" href="#education">Start digging</a>
+            <button class="px-btn js-copy-email" type="button">Copy email</button>
+          </div>
+          <p class="hint">Psst: five frogs are hiding somewhere on this page. Can you find them all?</p>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <div class="pond-scene">
+            <canvas class="mascot" data-sprite="frog" data-pal="green" data-scale="14"></canvas>
+            <canvas class="pad" data-sprite="lilypad" data-scale="17"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="ground" aria-hidden="true">
+        <div class="grass"></div>
+        <div class="soil-top">
+          <canvas class="buried b1" data-sprite="bone" data-scale="5"></canvas>
+          <canvas class="buried b2" data-sprite="ammonite" data-scale="5"></canvas>
+          <canvas class="buried b3" data-sprite="trilobite" data-scale="5"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- LAYER 1: EDUCATION -->
+    <section class="layer layer-1" id="education" aria-labelledby="edu-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 01 · TOPSOIL</p>
+          <h2 id="edu-title">Education</h2>
+        </header>
+
+        <div class="grid grid--edu">
+          <article class="card card--wide">
+            <p class="card-meta">June 2021 &ndash; December 2025</p>
+            <h3>B.Sc. (Honors) in Physics</h3>
+            <p class="card-sub">University of Peradeniya · Faculty of Science</p>
+            <ul class="px-list">
+              <li>GPA 3.74 / 4.00, First Class Honors</li>
+              <li>Minor coursework: Chemistry (2 years), Geology (1 year)</li>
+              <li>Audited: PHY 3712 Computational Physics and PHY 4872 Nano Physics</li>
+            </ul>
+          </article>
+
+          <aside class="card stats" aria-label="Quick stats">
+            <h3>Player stats</h3>
+            <dl>
+              <div><dt>GPA</dt><dd>3.74<small>/4.00</small></dd></div>
+              <div><dt>Class</dt><dd>1st</dd></div>
+              <div><dt>Awards</dt><dd>4</dd></div>
+              <div><dt>Certs</dt><dd>3</dd></div>
+              <div><dt>Languages</dt><dd>4</dd></div>
+              <div><dt>Frogs</dt><dd id="statFrogs">0/5</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+      <button class="hidden-frog" type="button" data-frog="1" data-pal="orange" data-scale="3"
+              style="right:6%;bottom:18px" aria-label="A hidden orange frog. Click to find it."></button>
+    </section>
+
+    <!-- LAYER 2: RESEARCH -->
+    <section class="layer layer-2" id="research" aria-labelledby="res-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 02 · CLAY</p>
+          <h2 id="res-title">Research</h2>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <div class="card-top">
+              <span class="tag tag--live">Ongoing</span>
+              <span class="card-meta">2026</span>
+            </div>
+            <h3>Green synthesis of indium oxide nanoparticles for gas sensing</h3>
+            <p class="card-sub">Using coconut leaf extract for high-performance gas sensing applications</p>
+            <p class="card-role">Graduate Researcher · Department of Physics, University of Peradeniya</p>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag tag--live">Ongoing</span>
+              <span class="card-meta">2026 · Literature review</span>
+            </div>
+            <h3>Eppawala apatite-derived hydroxyapatite as an imaging reference material</h3>
+            <p class="card-sub">Feasibility of using natural apatite from Eppawala, Sri Lanka, as a reference material in medical imaging phantoms</p>
+            <p class="card-role">Graduate Researcher · Department of Physics, University of Peradeniya</p>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Project</span>
+              <span class="card-meta">2025</span>
+            </div>
+            <h3>Low-cost pumice-based trabecular bone phantom</h3>
+            <p class="card-sub">Development and validation for phantom applications</p>
+            <p class="card-role">Undergraduate Research Project · University of Peradeniya</p>
+            <ul class="px-list">
+              <li>Acquired and analyzed digital radiography images to evaluate image-quality parameters: Contrast-to-Noise Ratio (CNR), Signal-to-Noise Ratio (SNR) and Coefficient of Variation (CoV).</li>
+              <li>Validated a low-cost pumice-based material as a trabecular bone phantom for medical imaging quality assurance.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Mini project</span>
+              <span class="card-meta">2023</span>
+            </div>
+            <h3>Nutritional content of breakfast cereals</h3>
+            <p class="card-role">University of Peradeniya</p>
+            <ul class="px-list">
+              <li>Quantified composition and key nutrients in selected breakfast cereals using Atomic Absorption Spectroscopy (AAS) and liquid chromatography, supported by additional chemical analysis methods.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <canvas class="deco deco-ammo" data-sprite="ammonite" data-scale="6" aria-hidden="true"></canvas>
+    </section>
+
+    <!-- LAYER 3: INTERESTS -->
+    <section class="layer layer-3" id="interests" aria-labelledby="int-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 03 · SANDSTONE</p>
+          <h2 id="int-title">Research interests</h2>
+        </header>
+
+        <div class="grid grid--3">
+          <article class="card card--icon">
+            <canvas data-sprite="drop" data-scale="5" aria-hidden="true"></canvas>
+            <h3>Membrane biophysics</h3>
+            <p>Nanoparticle&ndash;membrane interactions, lipid bilayer thermodynamics, transport phenomena and biomimetic membrane systems.</p>
+          </article>
+          <article class="card card--icon">
+            <canvas data-sprite="bone" data-scale="5" aria-hidden="true"></canvas>
+            <h3>Medical imaging phantoms</h3>
+            <p>Development, characterization and validation of tissue-equivalent reference materials for imaging quality assurance.</p>
+          </article>
+          <article class="card card--icon">
+            <canvas data-sprite="xray" data-scale="5" aria-hidden="true"></canvas>
+            <h3>Diagnostic radiological physics</h3>
+            <p>Image quality optimization (SNR, CNR), dosimetry and protocol validation in digital radiology.</p>
+          </article>
+        </div>
+
+        <aside class="note" aria-label="Off-duty interests">
+          <canvas data-sprite="ammonite" data-scale="3" aria-hidden="true"></canvas>
+          <p><strong>Off duty:</strong> frogs, fossils and paleontology. Bones in a phantom lab and bones in a quarry are not that different, apparently.</p>
+        </aside>
+      </div>
+      <button class="hidden-frog" type="button" data-frog="2" data-pal="blue" data-scale="3"
+              style="right:7%;bottom:26px" aria-label="A hidden blue frog. Click to find it."></button>
+    </section>
+
+    <!-- LAYER 4: AWARDS & PRESENTATIONS -->
+    <section class="layer layer-4" id="awards" aria-labelledby="awd-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 04 · LIMESTONE</p>
+          <h2 id="awd-title">Awards &amp; presentations</h2>
+        </header>
+
+        <div class="grid grid--2">
+          <div>
+            <h3 class="sub-h">Awards and honors</h3>
+            <ul class="trophy-list">
+              <li class="card">
+                <span class="trophy" aria-hidden="true"></span>
+                <div>
+                  <p class="card-meta">2026</p>
+                  <h4>Winner, 3MT Thesis Presentation Competition</h4>
+                  <p>National Institute of Fundamental Studies (NIFS), Sri Lanka, with the approval of Queensland University, Australia</p>
+                </div>
+              </li>
+              <li class="card">
+                <span class="trophy" aria-hidden="true"></span>
+                <div>
+                  <p class="card-meta">2026</p>
+                  <h4>Award for Academic Excellence</h4>
+                  <p>University of Peradeniya</p>
+                </div>
+              </li>
+              <li class="card">
+                <span class="trophy" aria-hidden="true"></span>
+                <div>
+                  <p class="card-meta">2026</p>
+                  <h4>Best Contribution to the Fundamental Sciences; Best Oral Presenter</h4>
+                  <p>Science Undergraduate Research Symposium (SURS)</p>
+                </div>
+              </li>
+              <li class="card">
+                <span class="trophy" aria-hidden="true"></span>
+                <div>
+                  <p class="card-meta">2021</p>
+                  <h4>Winner, Restituere Article and Poster Competition</h4>
+                  <p>Poster &ldquo;Wildlife Bridges&rdquo;, theme: Ecosystem Restoration</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="sub-h">Research presentations</h3>
+            <ul class="timeline">
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>American Physical Society (APS) Global Physics Summit 2027</h4>
+                <p>Abstract submitted <span class="tag">Under review</span></p>
+              </li>
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>European Congress of Medical Physics (ECMP) 2026</h4>
+                <p>Abstract accepted <span class="tag tag--live">Accepted</span></p>
+              </li>
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>Science Undergraduate Research Symposium (SURS) 2026</h4>
+                <p>Abstract presented (oral)</p>
+              </li>
+            </ul>
+
+            <h3 class="sub-h">Conferences attended</h3>
+            <ul class="timeline">
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>IDOS: International Symposium on Standards, Applications and Quality Assurance in Medical Radiation Dosimetry</h4>
+                <p>Virtual observer · October 2026</p>
+              </li>
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>Science Undergraduate Research Symposium (SURS)</h4>
+                <p>March 2026</p>
+              </li>
+              <li>
+                <span class="timeline-dot" aria-hidden="true"></span>
+                <h4>Radiopaedia 2025 Virtual Conference</h4>
+                <p>July 2025 · Case workshops and panel discussions on advanced MRI interpretation, cardiac MRI evaluation, lung cancer screening, forensic imaging, and radiology in spaceflight.</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <button class="hidden-frog" type="button" data-frog="3" data-pal="yellow" data-scale="3"
+              style="right:2%;top:40%" aria-label="A hidden yellow frog. Click to find it."></button>
+    </section>
+
+    <!-- LAYER 5: TEACHING -->
+    <section class="layer layer-5" id="teaching" aria-labelledby="tch-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 05 · SHALE</p>
+          <h2 id="tch-title">Teaching</h2>
+        </header>
+
+        <article class="card card--wide">
+          <p class="card-meta">March 2026 &ndash; Present</p>
+          <h3>Graduate Teaching Assistant (Demonstrator)</h3>
+          <p class="card-sub">University of Peradeniya</p>
+
+          <div class="teach-grid">
+            <div>
+              <h4 class="mini-h">Taught laboratory courses</h4>
+              <ul class="chip-list">
+                <li>PHY 1911 · Elementary Physics Laboratory 1</li>
+                <li>PHY 2921 · General Physics Laboratory 2</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini-h">Marked tutorials and led discussions</h4>
+              <ul class="chip-list">
+                <li>PHY 1103 · General Physics 1</li>
+                <li>PHY 1203 · General Physics 2</li>
+                <li>PHY 2822 · Medical Physics</li>
+                <li>PHY 2402 · Statistical Physics and Thermodynamics</li>
+                <li>PHY 3822 / BM 3142 · Biophysics</li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="mini-h">Mentoring</h4>
+              <ul class="chip-list">
+                <li>Poster presentation mentor · PHY 3992 Scientific Writing and Seminar</li>
+              </ul>
+            </div>
+          </div>
+        </article>
+      </div>
+      <canvas class="deco deco-tri" data-sprite="trilobite" data-scale="6" aria-hidden="true"></canvas>
+    </section>
+
+    <!-- LAYER 6: SKILLS -->
+    <section class="layer layer-6" id="skills" aria-labelledby="skl-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 06 · BASALT</p>
+          <h2 id="skl-title">Skills &amp; certifications</h2>
+        </header>
+
+        <div class="grid grid--2">
+          <article class="card">
+            <h3>Certifications</h3>
+            <ul class="cert-list">
+              <li><strong>Imaging Physics: X-Ray</strong><span>Radiopaedia · 2025</span></li>
+              <li><strong>Quality Control and Dosimetry in Digital Radiology</strong><span>IAEA · 2025</span></li>
+              <li><strong>Imaging Physics: CT</strong><span>Radiopaedia · 2026</span></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Languages</h3>
+            <ul class="lang-list">
+              <li><span>Sinhala <em>native</em></span><span class="meter" data-level="5" role="img" aria-label="5 of 5"></span></li>
+              <li><span>English <em>fluent</em></span><span class="meter" data-level="4" role="img" aria-label="4 of 5"></span></li>
+              <li><span>Tamil <em>basic</em></span><span class="meter" data-level="2" role="img" aria-label="2 of 5"></span></li>
+              <li><span>Spanish <em>basic</em></span><span class="meter" data-level="2" role="img" aria-label="2 of 5"></span></li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Laboratory techniques</h3>
+            <ul class="chip-list">
+              <li>Digital radiography image acquisition and analysis</li>
+              <li>Atomic Absorption Spectroscopy (AAS)</li>
+              <li>Liquid chromatography</li>
+              <li>UV-Visible Spectroscopy</li>
+              <li>FTIR analysis</li>
+              <li>PXRD analysis</li>
+              <li>Phantom fabrication and characterization</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Software &amp; quantitative skills</h3>
+            <ul class="chip-list">
+              <li>MATLAB</li>
+              <li>FreeCAD</li>
+              <li>Image-quality analysis (CNR, SNR, CoV)</li>
+              <li>Dosimetry</li>
+              <li>Statistical analysis</li>
+              <li>Scientific writing</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+      <button class="hidden-frog" type="button" data-frog="4" data-pal="red" data-scale="3"
+              style="left:50%;bottom:14px" aria-label="A hidden red-eyed frog. Click to find it."></button>
+    </section>
+
+    <!-- LAYER 7: SERVICE -->
+    <section class="layer layer-7" id="service" aria-labelledby="svc-title">
+      <div class="wrap">
+        <header class="layer-head">
+          <p class="layer-tag">LAYER 07 · BEDROCK</p>
+          <h2 id="svc-title">Leadership, service &amp; community</h2>
+        </header>
+
+        <div class="accordion">
+          <details class="card" open>
+            <summary>Leadership and roles</summary>
+            <ul class="px-list">
+              <li><strong>Vice President</strong>, Astronomical Society, University of Peradeniya <em>(2025&ndash;2026)</em></li>
+              <li><strong>Assistant Secretary</strong>, Astronomical Society, University of Peradeniya <em>(2024&ndash;2025)</em></li>
+              <li><strong>Active Member</strong>, Physical Society, University of Peradeniya <em>(2022&ndash;2026)</em></li>
+              <li><strong>Event Coordinator</strong>, International Interaction Club, University of Peradeniya <em>(2023)</em></li>
+              <li><strong>Team Leader, Marketing</strong>, AIESEC <em>(2023)</em></li>
+              <li><strong>Active Member</strong>, LEO Club, University of Peradeniya <em>(2022)</em></li>
+              <li><strong>Team Member, Business Development and Marketing</strong>, AIESEC <em>(2022)</em></li>
+              <li><strong>Faculty Representative</strong>, Gavel Club, University of Peradeniya <em>(2021&ndash;2022)</em></li>
+              <li><strong>Event Moderator</strong>: Inauguration Ceremony (Batch of '24, Faculty of Science); Rebuild Pera Donor Conference; Founder's Day, University of Peradeniya <em>(2026)</em></li>
+              <li><strong>Member</strong>, American Physical Society (APS)</li>
+            </ul>
+          </details>
+
+          <details class="card">
+            <summary>Volunteer experience</summary>
+            <ul class="px-list">
+              <li>&ldquo;WIDASA&rdquo; O/L Science and Mathematics Seminar, Sri Jinarathana School, Wegiriya <em>(2026)</em></li>
+              <li>&ldquo;Sip Saviya&rdquo; Donation Programme, Udadumbara Secondary School <em>(2026)</em></li>
+              <li>Astronomy Outreach Programme, Greenhill International School, Kandy <em>(2025)</em></li>
+              <li>O/L Science Seminar, Gannewa Secondary School, Hanguranketha <em>(2025)</em></li>
+              <li>Blue Rose Project, Blue Rose Special School, Kandy <em>(2023)</em></li>
+              <li>O/L Science and Mathematics Seminar, Uduwela Buddhist College <em>(2023)</em></li>
+              <li>Beach Cleanup &ldquo;Give Back Life&rdquo;, AIESEC Sri Lanka and Sana Mare Ceylon, Dehiwala-Mount Lavinia <em>(2022)</em></li>
+            </ul>
+          </details>
+
+          <details class="card">
+            <summary>Organizing and training</summary>
+            <ul class="px-list">
+              <li>Organizing Committee Member, RESCON 2026 Research Congress, Postgraduate Institute of Science, University of Peradeniya <em>(2026)</em></li>
+              <li>Organizing Committee Member, S19 Huddle: Interactive and Leadership Development Programme, Student Academic Advisory Committee <em>(2022&ndash;2025)</em></li>
+              <li>Organizing Committee Member, Hill Country Youth Peace Summit, The Road to Rights <em>(2023)</em></li>
+              <li>Delegate, National Leadership Development Seminar, AIESEC <em>(2023)</em></li>
+              <li>Leadership and Teambuilding Programme, The Commando Regiment Training School, Uva Kudaoya <em>(2018)</em></li>
+            </ul>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="pond" id="contact" aria-labelledby="contact-title">
+      <div class="water-top" aria-hidden="true"></div>
+      <div class="wrap pond-inner">
+        <header class="layer-head">
+          <p class="layer-tag">THE POND</p>
+          <h2 id="contact-title">Say hello</h2>
+        </header>
+        <p class="pond-lede">
+          Working on medical imaging phantoms, radiological physics or membrane biophysics?
+          Or just want to talk frogs and fossils? Drop me a line.
+        </p>
+
+        <div class="contact-card card">
+          <p class="contact-label">EMAIL</p>
+          <code class="email" id="emailText">udithdushantha@gmail.com</code>
+          <div class="contact-actions">
+            <button class="px-btn px-btn--primary js-copy-email" type="button">Copy email</button>
+            <a class="px-btn" id="linkedinLink" href="https://www.linkedin.com/search/results/people/?keywords=Udith%20Dushantha" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          </div>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="pads" aria-hidden="true">
+          <canvas data-sprite="lilypad" data-scale="8"></canvas>
+          <canvas data-sprite="lilypad" data-scale="5"></canvas>
+          <canvas data-sprite="lilypad" data-scale="7"></canvas>
+        </div>
+      </div>
+      <button class="hidden-frog" type="button" data-frog="5" data-pal="green" data-scale="3"
+              style="right:30%;bottom:150px" aria-label="A hidden green frog. Click to find it."></button>
+
+      <footer class="foot">
+        <p>© 2026 Udith Dushantha · Gampola, Kandy, Sri Lanka · Built in a swamp, by lantern light.</p>
+      </footer>
+    </section>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="sprites.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
